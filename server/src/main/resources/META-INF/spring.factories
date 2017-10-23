@@ -1,3 +1,2 @@
 # Autoconfiguration
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-org.springframework.cloud.config.s3.CloudConfigS3AutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.springframework.cloud.config.s3.CloudConfigS3AutoConfiguration
