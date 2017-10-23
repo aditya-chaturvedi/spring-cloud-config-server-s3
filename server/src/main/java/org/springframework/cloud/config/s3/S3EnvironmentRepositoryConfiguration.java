@@ -35,19 +35,13 @@ public class S3EnvironmentRepositoryConfiguration {
     private ConfigurableEnvironment environment;
 
     @Autowired
-    protected CloudConfigS3Properties s3Properties;
+    protected CloudConfigS3Properties cloudConfigS3Properties;
 
     @Bean
     @Primary
-    public EnvironmentRepository environmentRepository(AWSCredentialsProvider credentialProvider,
+    public EnvironmentRepository environmentRepository(AWSCredentialsProvider credentialsProvider,
                                                        @Value("${cloud.aws.region}") final String region,
                                                        @Value("${spring.cloud.config.s3.searchPaths:}") final String searchPaths) {
-        return new S3EnvironmentRepository(environment, s3Properties, credentialProvider, region, searchPaths);
+        return new S3EnvironmentRepository(environment, cloudConfigS3Properties, credentialsProvider, region, searchPaths);
     }
-
-    @Bean
-    public CloudConfigS3Properties buildCloudConfigS3Properties() {
-        return new CloudConfigS3Properties();
-    }
-
 }

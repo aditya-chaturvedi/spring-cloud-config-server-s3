@@ -14,8 +14,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @SuppressWarnings("InstanceVariableMayNotBeInitialized")
 @Configuration
-public class CredentialProvider {
-
+public class CredentialsProvider {
 
 	/**
 	 * AWS Chain Provider that try credentials provider and stop at first success
